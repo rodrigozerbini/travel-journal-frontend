@@ -1,10 +1,21 @@
 .header {
   background-color: #f55a5a;
-  color: white;
+  color: #ffffff;
   height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 500;
-  font-size: 14px;
+
+  i {
+    font-size: 16px;
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    transform: translateY(2px);
+  }
+
+  &--title {
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
