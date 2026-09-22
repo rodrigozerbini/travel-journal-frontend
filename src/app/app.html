@@ -1,1 +1,6 @@
 <app-header></app-header>
+<main class="container">
+  @for (place of places(); track place.id) {
+    <app-card [place]="place"></app-card>
+  }
+</main>

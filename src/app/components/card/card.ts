@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Place } from '../../models/place';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
-  imports: [],
+  imports: [UpperCasePipe],
   selector: 'app-card',
   styleUrl: './card.scss',
   templateUrl: './card.html',
 })
-export class Card {}
+export class Card {
+  place = input.required<Place>();
+}
