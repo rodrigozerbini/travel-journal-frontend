@@ -1,0 +1,44 @@
+<dialog #dialog class="modal" (close)="form.reset()">
+  <form class="modal--form" [formGroup]="form" (ngSubmit)="submit()">
+    <h2 class="modal--title">New place</h2>
+
+    <label class="modal--field">
+      Country
+      <input formControlName="location" placeholder="Japan" />
+    </label>
+
+    <label class="modal--field">
+      Place visited
+      <input formControlName="title" placeholder="Mount Fuji" />
+    </label>
+
+    <label class="modal--field">
+      Google Maps link
+      <input formControlName="googleMapsUrl" placeholder="https://maps.app.goo.gl/..." />
+      @if (form.controls.googleMapsUrl.touched && form.controls.googleMapsUrl.invalid) {
+        <small class="modal--error">Enter a valid link starting with http:// or https://</small>
+      }
+    </label>
+
+    <div class="modal--row">
+      <label class="modal--field">
+        Start date
+        <input type="date" formControlName="startDate" />
+      </label>
+      <label class="modal--field">
+        End date
+        <input type="date" formControlName="endDate" />
+      </label>
+    </div>
+
+    <label class="modal--field">
+      Description
+      <textarea rows="4" formControlName="description"></textarea>
+    </label>
+
+    <div class="modal--actions">
+      <button type="button" class="modal--cancel" (click)="close()">Cancel</button>
+      <button type="submit" class="modal--create">Create</button>
+    </div>
+  </form>
+</dialog>

@@ -4,3 +4,5 @@
     <app-card [place]="place"></app-card>
   }
 </main>
+<app-add-place-button (clicked)="openCreateModal()"></app-add-place-button>
+<app-create-place-modal (create)="onCreate($event)"></app-create-place-modal>
